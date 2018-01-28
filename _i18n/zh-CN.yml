@@ -1,0 +1,13 @@
+nav:
+  home: 主页
+  archives: 归档
+  categories: 分类
+  tags: 标签
+  about: 关于
+
+side_nav:
+  recent_posts: 最近文章
+  categories: 分类
+  tags: 标签
+  content: 内容
+  
