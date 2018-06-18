@@ -6,8 +6,8 @@
 # 'jekyll serve'. If you change this file, please restart the server process.
 
 # Site settings
-title: 优雅的激情攻城狮
-brief-intro: 怎样才更优雅
+title: 区块链实践
+brief-intro: 
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://gnuser.github.io" # the base hostname & protocol for your site
 
@@ -22,7 +22,7 @@ zhihu_username:
 linkedIn_username:
 dribbble_username:
 
-description_footer: 任何不优雅的地方都该重新思考！
+description_footer: kiss
 
 # comments
 # two ways to comment, only choose one, and use your own short name

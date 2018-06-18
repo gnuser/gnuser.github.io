@@ -10,3 +10,6 @@ side_nav:
   categories: Categories
   tags: Tags
   content: Content
+
+post:
+  comments: Comments

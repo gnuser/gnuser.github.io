@@ -10,4 +10,7 @@ side_nav:
   categories: 分类
   tags: 标签
   content: 内容
-  
+
+
+post:
+  comments: 评论
