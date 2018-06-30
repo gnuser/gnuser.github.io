@@ -4,7 +4,7 @@ title:  "如何做一个有气场的人"
 categories: 修身
 ---
 
-* show me the navigator
+* 1. show me the navigator
 {:toc}
 ## 沉稳
   - 不要随便显露你的情绪
