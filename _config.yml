@@ -70,4 +70,4 @@ exclude_from_localizations:
   - images
   - css
 
-nav_list: [null, 归档, 分类, 标签, 关于]
+nav_list: [null, 归档, 分类, 标签, 关于, 统计]
