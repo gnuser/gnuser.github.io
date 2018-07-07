@@ -16,7 +16,7 @@
                     </a>
                 </li>
                 {% for my_page in site.pages %}
-                    {% assign index = forloop.index | plus:-1 %}
+                    {% assign index = forloop.index | plus:0 %}
                     {% if my_page.type == 'page' %}
                     <li>
                         {% if my_page.url == page.url %}
