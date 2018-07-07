@@ -11,20 +11,21 @@
                         {% else %}
                     <a href="{{site.baseurl}}/">
                     {% endif %}
-                        <i class="fa fa-home"></i>{% t nav.home %}
+                        <i class="fa fa-home"></i>
+                        主页
                     </a>
                 </li>
-
                 {% for my_page in site.pages %}
+                    {% assign index = forloop.index | plus:-1 %}
                     {% if my_page.type == 'page' %}
                     <li>
                         {% if my_page.url == page.url %}
-                        <a class="active" href="{{ my_page.url | prepend: site.baseurl }}">
-                            {% else %}
-                        <a href="{{ my_page.url | prepend: site.baseurl }}">
+                            <a class="active" href="{{ my_page.url | prepend: site.baseurl }}">
+                        {% else %}
+                            <a href="{{ my_page.url | prepend: site.baseurl }}">
                         {% endif %}
-                            <i class="fa fa-{{my_page.icon}}"></i>{% t nav.{{ my_page.title | downcase }} %}
-                        </a>
+                        <i class="fa fa-{{my_page.icon}}"></i>{{ site.nav_list[index] }}
+                            </a>
                     </li>
                     {% endif %}
                 {% endfor %}

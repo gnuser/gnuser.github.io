@@ -6,7 +6,7 @@
 # 'jekyll serve'. If you change this file, please restart the server process.
 
 # Site settings
-title: KISS
+title: Allin区块链
 brief-intro: 
 baseurl: "" # the subpath of your site, e.g. /blog
 url: https://gnuser.github.io # the base hostname & protocol for your site
@@ -69,3 +69,5 @@ exclude_from_localizations:
   - javascript
   - images
   - css
+
+nav_list: [null, 归档, 分类, 标签, 关于]
