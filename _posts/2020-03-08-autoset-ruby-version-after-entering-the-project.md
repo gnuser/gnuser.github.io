@@ -1,4 +1,6 @@
 ---
+layout: article
+key: autoset-ruby-version-after-entering-the-project
 title: 进入目录时自动设置ruby版本
 tags: jekyll ruby
 typora-root-url: "/Users/chenjing/workspace/github/gnuser.github.io"
