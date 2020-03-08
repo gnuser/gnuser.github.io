@@ -1,6 +1,7 @@
 ---
 title: 使用typora编写blog
 date: 2020-03-08 11:30 +0800
+tags: jekyll typora github
 typora-root-url: "/Users/chenjing/workspace/github/gnuser.github.io"
 ---
 

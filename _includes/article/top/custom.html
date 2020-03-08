@@ -1,3 +1,12 @@
 <!-- start custom article top snippet -->
 
+{% capture words %}
+	{{ content | strip_html | strip_newlines | remove: " " | size }}
+{% endcapture %}
+
+{% capture time %}
+	{{ words | divided_by: 350 | plus: 1 }} 
+{% endcapture %}
+<h6> {{ words }} words, {{ time }} mins </h6>
+
 <!-- end custom article top snippet -->
