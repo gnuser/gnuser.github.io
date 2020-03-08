@@ -29,6 +29,7 @@ fi
 touch $filepath
 
 echo "---" >> $filepath
+echo "key: ${bloghome}" >> $filepath
 echo "title: ${title}" >> $filepath
 echo "date: $(date +"%Y-%m-%d %H:%M:%S %z")" >> $filepath
 echo "typora-root-url: ${typorarooturl}" >> $filepath
