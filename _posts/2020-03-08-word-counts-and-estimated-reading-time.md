@@ -3,6 +3,7 @@ title: 文章字数显示以及阅读时间预估
 date: 2020-03-08 16:31:40 +0800
 typora-root-url: /Users/chenjing/workspace/github/gnuser.github.io
 tags: jekyll
+key: word-counts-and-estimated-reading-time
 ---
 
 优化阅读体验

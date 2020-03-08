@@ -3,6 +3,7 @@ title: 使用typora编写blog
 date: 2020-03-08 11:30 +0800
 tags: jekyll typora github
 typora-root-url: "/Users/chenjing/workspace/github/gnuser.github.io"
+key: using-github-typora-and-jekyll-for-blog-writing
 ---
 
 typora这款markdown编辑软件非常好用,在mac上使用起来体验也很棒,让人忍不住想在上面书写,如何结合github让编辑到发布更加顺畅? 
