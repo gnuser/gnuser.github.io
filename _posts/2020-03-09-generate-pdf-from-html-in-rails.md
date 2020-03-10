@@ -5,14 +5,14 @@ date: 2020-03-09 21:41:38 +0800
 typora-root-url: /Users/chenjing/workspace/github/gnuser.github.io
 ---
 
-因为工作需要,要生成一个发票的pdf,这个需求还挺有意思的,要注意的地方比如分页的处理,还有不要用复杂的flex布局.
+因为工作需要,要生成pdf文档,这个需求还挺有意思的,要注意的地方比如pdf分页的处理,还有不要用复杂的flex布局.
 
 <!--more-->
 
 目前的解决方案有:
 
 - PDFKit
-- Wicked PDF
+- [Wicked PDF](https://github.com/mileszs/wicked_pdf)(本文使用这个,文档够用)
 
 这两个都是基于一个跨平台的免费开源工具[wkhtmltopdf](https://github.com/wkhtmltopdf/wkhtmltopdf).这个工具能直接从html页面生成pdf.
 
@@ -130,7 +130,7 @@ ralis db:migrate
 
 ## 生成测试数据
 
-修改[db/seeds.rb](https://github.com/PDFTron/rails-generate-pdf/blob/master/db/seeds.rb)
+修改[db/seeds.rb](https://github.com/PDFTron/rails-generate-pdf/blob/master/db/seeds.rb),太长就不贴了.
 
 ```shell
 rails db:seed
@@ -222,7 +222,7 @@ end
 </html>
 ```
 
-这里的help函数`wicked_pdf_stylesheet_link_tag`会添加css文件 `app/assets/stylesheets/invoice.scss`
+这里的`helper`函数`wicked_pdf_stylesheet_link_tag`会添加css文件 `app/assets/stylesheets/invoice.scss`
 
 ## 修改show.html.erb
 
@@ -257,5 +257,25 @@ Rails.application.config.assets.precompile += %w( invoice.scss )
 
 比较全的配置文件[参考这里](https://github.com/mileszs/wicked_pdf#advanced-usage-with-all-available-options)
 
+### 推荐使用html方式
+
+这样你就可以更加灵活的控制文字样式和位置了,包括参数传递和页码打印
+
+[参考这里](https://github.com/mileszs/wicked_pdf#page-numbering)
+
+写好html后,就可以配置参数了,像这样:
+
+```ruby
+footer: {
+  content: render_to_string(
+    'template/footer.html',
+    layout: false
+    )
+  }
+```
 
 
+
+## 注意
+
+不要用复杂的flex布局,可能会不支持!
