@@ -28,3 +28,8 @@ key: page-about
 ---
 
 Think more, Practice more.
+
+Artisan spirit.
+
+Keep curious.
+
