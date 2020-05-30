@@ -80,9 +80,9 @@ cpu count = Socket(s) * Core(s) per socket * Thread(s) per core
 
 查看 lscpu 的源码，可以看到每个系数的真正来源。
 
-https://github.com/karelzak/util-linux/blob/2eb527722af2093038bf38d4554c086d20df79c9/sys-utils/lscpu.c#L1081
+[https://github.com/karelzak/util-linux/blob/2eb527722af2093038bf38d4554c086d20df79c9/sys-utils/lscpu.c#L1081](https://github.com/karelzak/util-linux/blob/2eb527722af2093038bf38d4554c086d20df79c9/sys-utils/lscpu.c#L1081)
 
-https://github.com/karelzak/util-linux/blob/2eb527722af2093038bf38d4554c086d20df79c9/sys-utils/lscpu.c#L2105
+[https://github.com/karelzak/util-linux/blob/2eb527722af2093038bf38d4554c086d20df79c9/sys-utils/lscpu.c#L2105](https://github.com/karelzak/util-linux/blob/2eb527722af2093038bf38d4554c086d20df79c9/sys-utils/lscpu.c#L2105)
 
 
 
@@ -113,7 +113,7 @@ $ cat /proc/loadavg
 
 - 源码跟踪
 
-https://github.com/torvalds/linux/blob/9cb1fd0efd195590b828b9b865421ad345a4a145/kernel/sched/loadavg.c#L157
+[https://github.com/torvalds/linux/blob/9cb1fd0efd195590b828b9b865421ad345a4a145/kernel/sched/loadavg.c#L157](https://github.com/torvalds/linux/blob/9cb1fd0efd195590b828b9b865421ad345a4a145/kernel/sched/loadavg.c#L157)
 
 计算平均值的算法为EMA，这种算法的目的主要是“距离目标预测窗口越近，则数据的价值越高，对未来影响越大”
 
