@@ -61,7 +61,7 @@ ruby parallel.rb  0.40s user 0.07s system 153% cpu 0.309 total
 #  | - 32867 ruby parallel.rb (child process)
 ```
 
-###优点：
+### 优点：
 
 - 进程不共享内存，因此你不能去修改另一个进程的数据。这可以让代码编写和调试更加容易。
 - 由于有[Ruby MRI](https://en.wikipedia.org/wiki/Ruby_MRI)，多进程是唯一可以利用多核的方法，因为有一个GIL(全局解释器锁，下文有更多关于此的信息)。如果你在做比如说一些数学计算，这可能会很有用。
@@ -191,7 +191,7 @@ woke up!
 ### 开源项目：
 
 - [Goliath](https://github.com/postrank-labs/goliath/) — 单线程异步服务器
-- [AMQP](https://github.com/ruby-amqp/amqp) — RabbitMQ 客户端. 然而，这个 gem 的作者建议使用不基于 EM 的版本[Bunny](http://rubybunny.info/). 请注意，将工具迁移到没有em的实现是一种普遍趋势。例如,(ActionCable) (https://github.com/rails/rails/tree/master/actioncable)的作者决定使用低级(nio4r) (https://github.com/socketry/nio4r)，(sinatra-synchrony) (https://github.com/kyledrake/sinatra-synchrony)的作者使用[Celluloid](https://github.com/celluloid/celluloid)重写了,等等。
+- [AMQP](https://github.com/ruby-amqp/amqp) — RabbitMQ 客户端. 然而，这个 gem 的作者建议使用不基于 EM 的版本[Bunny](http://rubybunny.info/). 请注意，将工具迁移到没有em的实现是一种普遍趋势。例如,[ActionCable](https://github.com/rails/rails/tree/master/actioncable)的作者决定使用[nio4r](https://github.com/socketry/nio4r)重写，[sinatra-synchrony](https://github.com/kyledrake/sinatra-synchrony)的作者使用[Celluloid](https://github.com/celluloid/celluloid)重写,等等。
 
 ## Fibers(纤程)
 
@@ -235,11 +235,10 @@ def http_get(url)
 end
 ```
 
-因此，基本上，Fiber#yield 返回到恢复纤程的上下文，并把返回值传递给Fiber#resume。
+因此，基本上，`Fiber#yield` 返回到恢复纤程的上下文，并把返回值传递给`Fiber#resume`。
 
 ### 优点
 
-- Fibers allow you to simplify asynchronous code by replacing nested callbacks.
 - 纤程允许您通过替换嵌套回调来简化异步代码。
 
 ### 缺点:
