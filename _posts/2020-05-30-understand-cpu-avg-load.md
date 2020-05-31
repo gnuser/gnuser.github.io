@@ -1,6 +1,6 @@
 ---
 key: understand-cpu-avg-load
-title: understand-cpu-avg-load
+title: Understand The CPU Avg Load
 date: 2020-05-30 23:59:59 +0800
 typora-root-url: /Users/chenjing/workspace/github/gnuser.github.io
 ---
