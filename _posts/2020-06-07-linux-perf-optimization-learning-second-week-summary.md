@@ -48,7 +48,7 @@ Linux 性能优化学习，第二周总结
 1. 使用 htop 发现 cpu 100%
 2. 查看到进程是`puma`几乎占满了 cpu
 3. 使用 `strace -p pid` ，发现获取不到什么log
-4. 使用ps -efL | grep puma, 获取到一堆的线程
+4. 使用`ps -efL | grep puma`, 获取到一堆的线程
 
 ```shell
 ubuntu    4549 16342  4549  0    9 May19 ?        00:00:00 puma: cluster worker 0: 16342 [payment]
