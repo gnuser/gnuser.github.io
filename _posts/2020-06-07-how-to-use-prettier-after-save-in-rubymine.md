@@ -33,8 +33,8 @@ Preferences -> Tools -> External Tools
 - Name: prettier
 - Description: prettier
 - Program: /usr/local/bin/prettier
-- Arguments: --write $FilePathRelativeToProjectRoot$
-- Working directory: $ProjectFileDir$
+- Arguments: --write `$FilePathRelativeToProjectRoot$`
+- Working directory: `$ProjectFileDir$`
 
 其他不用改
 
