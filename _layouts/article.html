@@ -3,6 +3,8 @@ layout: page
 type: article
 ---
 
+<link rel="stylesheet" href="/assets/style.css">
+
 {%- include snippets/assign.html
   target = site.data.variables.default.page.sharing
   source0=layout.sharing source1=page.sharing -%}
@@ -27,3 +29,5 @@ type: article
 <script>
   {%- include scripts/article.js -%}
 </script>
+<script src="/assets/clipboard.min.js"></script>
+<script src="/assets/copy.js"></script>
