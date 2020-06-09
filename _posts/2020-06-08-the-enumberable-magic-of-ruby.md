@@ -23,13 +23,13 @@ EVENT_TYPE_LIST = %w(PaymentDepositCredited PaymentRefundRequested PaymentRefund
 
 嗯？连字符串的重复都不放过？我服了！
 
-然后没万，接下来还有几行代码：
+然后没完，接下来还有几行代码：
 
 ```ruby
 EventRecord.where(event_type: t).each.with_object({}) {|e, h| h[e.id] ||= []; h[e.id] << e}.collect {|aid, events| Accounts::TransactionProjector.project(events.first.aggregate_id, events: events)}.count
 ```
 
-shit,这一长串操作我反复看了快 半个小时，才知道他大概意思，当然可以写得更清晰好懂一点，但这么一行运行下来，其实没有太多拖泥带水的语句，反而还是提现了简洁的风格，所以瞬间感觉到了差距了，赶紧恶补一下 Ruby 语法。
+shit,这一长串操作我反复看了快 半个小时，才知道他大概意思，当然可以写得更清晰好懂一点，但这么一行运行下来，其实没有太多拖泥带水的语句，反而还是体现了简洁的风格，所以瞬间感觉到了差距了，赶紧恶补一下 Ruby 语法。
 
 ## Enumerable
 
