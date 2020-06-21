@@ -1,50 +1,94 @@
 header:
+  - title: 性能优化
+    url: /lpo/index
   - titles:
       # @start locale config
-      en      : &EN       Archive
-      en-GB   : *EN
-      en-US   : *EN
-      en-CA   : *EN
-      en-AU   : *EN
-      zh-Hans : &ZH_HANS  归档
-      zh      : *ZH_HANS
-      zh-CN   : *ZH_HANS
-      zh-SG   : *ZH_HANS
-      zh-Hant : &ZH_HANT  歸檔
-      zh-TW   : *ZH_HANT
-      zh-HK   : *ZH_HANT
-      ko      : &KO       아카이브
-      ko-KR   : *KO
-      fr      : &FR       Archives
-      fr-BE   : *FR
-      fr-CA   : *FR
-      fr-CH   : *FR
-      fr-FR   : *FR
-      fr-LU   : *FR
+      en: &EN Archive
+      en-GB: *EN
+      en-US: *EN
+      en-CA: *EN
+      en-AU: *EN
+      zh-Hans: &ZH_HANS 归档
+      zh: *ZH_HANS
+      zh-CN: *ZH_HANS
+      zh-SG: *ZH_HANS
+      zh-Hant: &ZH_HANT 歸檔
+      zh-TW: *ZH_HANT
+      zh-HK: *ZH_HANT
+      ko: &KO 아카이브
+      ko-KR: *KO
+      fr: &FR Archives
+      fr-BE: *FR
+      fr-CA: *FR
+      fr-CH: *FR
+      fr-FR: *FR
+      fr-LU: *FR
       # @end locale config
     url: /archive.html
 
   - titles:
       # @start locale config
-      en      : &EN       About
-      en-GB   : *EN
-      en-US   : *EN
-      en-CA   : *EN
-      en-AU   : *EN
-      zh-Hans : &ZH_HANS  关于
-      zh      : *ZH_HANS
-      zh-CN   : *ZH_HANS
-      zh-SG   : *ZH_HANS
-      zh-Hant : &ZH_HANT  關於
-      zh-TW   : *ZH_HANT
-      zh-HK   : *ZH_HANT
-      ko      : &KO       소개
-      ko-KR   : *KO
-      fr      : &FR       À propos
-      fr-BE   : *FR
-      fr-CA   : *FR
-      fr-CH   : *FR
-      fr-FR   : *FR
-      fr-LU   : *FR
+      en: &EN About
+      en-GB: *EN
+      en-US: *EN
+      en-CA: *EN
+      en-AU: *EN
+      zh-Hans: &ZH_HANS 关于
+      zh: *ZH_HANS
+      zh-CN: *ZH_HANS
+      zh-SG: *ZH_HANS
+      zh-Hant: &ZH_HANT 關於
+      zh-TW: *ZH_HANT
+      zh-HK: *ZH_HANT
+      ko: &KO 소개
+      ko-KR: *KO
+      fr: &FR À propos
+      fr-BE: *FR
+      fr-CA: *FR
+      fr-CH: *FR
+      fr-FR: *FR
+      fr-LU: *FR
       # @end locale config
-    url: /about.html
+    url: /about.htm
+
+lpo:
+  - title: IO性能优化
+    children:
+      - title: IO栈全景图
+        url: /lpo/io/stack
+      - title: fio-测试磁盘性能
+        url: /lpo/io/fio
+      - title: df-查看磁盘使用情况
+        url: /lpo/io/df
+      - title: iostat-磁盘性能检测
+        url: /lpo/io/iostat
+      - title: pidstat-查看进程IO
+        url: /lpo/io/pidstat
+      - title: slabtop-查看slab缓存占用排行
+        url: /lpo/io/slabtop
+      - title: opensnoop-完整IO路径
+        url: /lpo/io/opensnoop
+      - title: filetop-文件IO排行
+        url: /lpo/io/filetop
+      - title: iotop-进程IO排行
+        url: /lpo/io/iotop
+      - title: lsof-指定进程打开了哪些文件
+        url: /lpo/io/lsof
+      - title: nsenter-进入命名空间运行程序
+        url: /lpo/io/nsenter
+      - title: vmstat-观察磁盘读写
+        url: /lpo/io/vmstat
+      - title: strace-分析线程数据读取
+        url: /lpo/io/strace
+      - title: mysql-慢查询分析
+        url: /lpo/io/mysql
+
+layouts:
+  - title: Layouts
+    children:
+      - title: Single
+        url: /page/single.html
+      - title: Aside
+        url: /page/aside.html
+      - title: Sidebar
+        url: /page/sidebar.html
