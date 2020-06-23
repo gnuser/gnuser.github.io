@@ -82,7 +82,18 @@ lpo:
         url: /lpo/io/strace
       - title: mysql-慢查询分析
         url: /lpo/io/mysql
-
+  - title: 网络性能优化
+    children:
+      - title: OSI网络模型
+        url: /lpo/network/osi
+      - title: ifconfig&ip-网络配置
+        url: /lpo/network/ifconfig-ip
+      - title: netstat&ss-套接字信息
+        url: /lpo/network/netstat-ss
+      - title: sar-网络吞吐和PPS
+        url: /lpo/network/sar
+      - title: mtr-检测网络
+        url: /lpo/network/mtr
 layouts:
   - title: Layouts
     children:
