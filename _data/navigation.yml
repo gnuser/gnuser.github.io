@@ -94,6 +94,16 @@ lpo:
         url: /lpo/network/sar
       - title: mtr-检测网络
         url: /lpo/network/mtr
+      - title: pktgen-测试网络性能
+        url: /lpo/network/pktgen
+      - title: ethtool-查看网卡信息
+        url: /lpo/network/ethtool
+      - title: iperf3-TCP/UDP性能
+        url: /lpo/network/iperf3
+      - title: ab-HTTP性能
+        url: /lpo/network/ab
+      - title: wrk-HTTP性能
+        url: /lpo/network/wrk
 layouts:
   - title: Layouts
     children:
