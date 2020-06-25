@@ -9,4 +9,6 @@ aside:
   toc: true
 ---
 
+## 10 分钟找出性能瓶颈
+
 ![img](../media/index/9ee6c1c5d88b0468af1a3280865a6b7a.png)
