@@ -104,6 +104,10 @@ lpo:
         url: /lpo/network/ab
       - title: wrk-HTTP性能
         url: /lpo/network/wrk
+      - title: nslookup-查询域名的A记录
+        url: /lpo/network/nslookup
+      - title: dig-递归查询DNS解析过程
+        url: /lpo/network/dig
 layouts:
   - title: Layouts
     children:
