@@ -30,7 +30,7 @@ $ hping3 -S -p 80 -i u10 192.168.0.30
 
 ## 解决方法
 
-- 使用 [iptables]({{ site.baseurl }}{% link lpo/network/iptables %}) 限制网络包
+- 使用 [iptables](/lpo/network/iptables) 限制网络包
 - 调整系统参数
 
 1. 半开连接数
