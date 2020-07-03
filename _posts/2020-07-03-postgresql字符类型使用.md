@@ -6,7 +6,7 @@ typora-root-url: /Users/chenjing/workspace/github/gnuser.github.io
 
 ---
 
-之前看了一篇文章，对数据库字段定义是直接使用`text`类型进行了批评，那在`postgresql`中，到底应该怎么选择呢？
+之前看了一篇文章，对数据库字段直接使用`text`类型进行了批评，那在`postgresql`中，到底应该怎么选择呢？
 
 <!--more-->
 
@@ -26,7 +26,7 @@ PostgreSQL 中字符类型包括： `char`, `varchar`,  `text`
 
 那到底限制的优势在哪儿呢？一般我们可能认为限制后，内存消耗或硬盘占用会更少，但实际上在`postgresql`中并不是这样，唯一的好处就是在数据库层面帮你检查一下字符串长度，并没有什么性能提升。
 
-> Different from other database systems, in PostgreSQL, there is no performance difference among three character types. In most situation, you should use `text` or `varchar`, and `varchar(n)` if you want PostgreSQL to check for the length limit.
+> There is no performance difference among these three types, apart from increased storage space when using the blank-padded type, and a few extra CPU cycles to check the length when storing into a length-constrained column. While `character(*`n`*)` has performance advantages in some other database systems, there is no such advantage in PostgreSQL; in fact `character(*`n`*)` is usually the slowest of the three because of its additional storage costs. In most situations `text` or `character varying` should be used instead.
 
 需要注意的是，如果使用`character`和 `char`不指定`n`，那么等价于`character(1)`和`char(1)`,也就是固定长度为 1。
 
