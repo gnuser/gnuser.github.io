@@ -14,6 +14,7 @@ HTTP 性能测试工具，内置了 LuaJIT，方便你根据实际需求，生�
 <!--more-->
 
 ## 安装
+
 ```shell
 $ git clone https://github.com/wg/wrk
 $ cd wrk
@@ -23,6 +24,7 @@ $ sudo cp wrk /usr/local/bin/
 ```
 
 ## 测试
+
 ```shell
 # -c表示并发连接数1000，-t表示线程数为2
 $ ./wrk -c 1000 -t 2 http://172.18.9.134/
@@ -48,6 +50,7 @@ wrk 在调用 Lua 脚本时，可以将 HTTP 请求分为三个阶段，即 setu
 ![img](../media/wrk/d02b845aa308b7a38a5735f3db8d9682.png)
 
 比如，你可以在 setup 阶段，为请求设置认证参数（来自于 wrk 官方示例）：
+
 ```shell
 
 -- example script that demonstrates response handling and
@@ -71,7 +74,27 @@ end
 ```
 
 执行时指定`lua 文件`
+
 ```shell
 $ wrk -c 1000 -t 2 -s auth.lua http://172.18.9.134/
 ```
 
+## 测试网络延迟
+
+```shell
+# 测试80端口性能
+$ # wrk --latency -c 100 -t 2 --timeout 2 http://192.168.0.30/
+Running 10s test @ http://192.168.0.30/
+  2 threads and 100 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     9.19ms   12.32ms 319.61ms   97.80%
+    Req/Sec     6.20k   426.80     8.25k    85.50%
+  Latency Distribution
+     50%    7.78ms
+     75%    8.22ms
+     90%    9.14ms
+     99%   50.53ms
+  123558 requests in 10.01s, 100.15MB read
+Requests/sec:  12340.91
+Transfer/sec:     10.00MB
+```
