@@ -32,3 +32,4 @@ PostgreSQL 中字符类型包括： `char`, `varchar`,  `text`
 
 所以大多数情况下，我们还是可以直接在`postgresql`使用`text`和`varchar`。
 
+* https://www.postgresql.org/docs/12/datatype-character.html
