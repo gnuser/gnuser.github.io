@@ -9,11 +9,11 @@ typora-root-url: /Users/chenjing/workspace/github/gnuser.github.io
 
 <!--more-->
 
-### 在 PR 页面选择 `edit，`并且调整`base branch`
+### 在 PR 页面选择 `edit`
 
 ![image-20200717112051077](/../../../../../../../media/2020-07-17-github页面上进行rebase/image-20200717112051077.png)
 
+### 调整`base branch`
 
-
-![image-20200717112025210](/../../../../../../../media/2020-07-17-github页面上进行rebase/image-20200717112025210.png)
+![image-20200717113056197](/../../../../../../../media/2020-07-17-github页面上进行rebase/image-20200717113056197.png)
 
