@@ -98,3 +98,11 @@ Running 10s test @ http://192.168.0.30/
 Requests/sec:  12340.91
 Transfer/sec:     10.00MB
 ```
+
+## 测试指定时长
+
+```shell
+# 测试 30 分钟
+$ wrk --latency -c 1000 -d 1800 http://192.168.0.30
+```
+

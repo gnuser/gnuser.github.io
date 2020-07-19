@@ -131,11 +131,173 @@ sudo trace-cmd record -p function_graph -g do_sys_open -O funcgraph-proc ls
 sudo trace-cmd report
 ```
 
-## perf
+### perf
 
-安装调试符号信息
+安装调试符号信息， 参考[https://wiki.ubuntu.com/Debug%20Symbol%20Packages](https://wiki.ubuntu.com/Debug Symbol Packages)
 
 ```shell
+codename=$(lsb_release -c | awk  '{print $2}')
+sudo tee /etc/apt/sources.list.d/ddebs.list << EOF
+deb http://ddebs.ubuntu.com/ ${codename}      main restricted universe multiverse
+deb http://ddebs.ubuntu.com/ ${codename}-security main restricted universe multiverse
+deb http://ddebs.ubuntu.com/ ${codename}-updates  main restricted universe multiverse
+deb http://ddebs.ubuntu.com/ ${codename}-proposed main restricted universe multiverse
+EOF
 sudo apt install ubuntu-dbgsym-keyring
+sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys F2EDC64DC5AEE1F6B9C621F0C8CAB6595FDFF622
+sudo apt-get update
+sudo apt-get install linux-image-$(uname -r)-dbgsym
 ```
+
+以观察内核函数 `do_sys_open` 为例子
+
+- 查看函数的定义，参数的类型
+
+```shell
+$ sudo perf probe -V do_sys_open
+Available variables at do_sys_open
+        @<do_sys_open+0>
+                char*   filename
+                int     dfd
+                int     flags
+                struct open_flags       op
+                umode_t mode
+```
+
+这里我们比较关注的是`filename`，也就是希望看到打开的文件名称，如果查看不到以上内容，说明调试符号没有安装好。
+
+- 添加探针
+
+```shell
+sudo perf probe --add 'do_sys_open filename:string'
+```
+
+注意，如果只写函数名称，是看不到函数打开的文件名的
+
+- 采样
+
+```shell
+sudo perf record -e probe:do_sys_open -aR ls
+```
+
+- 查看结果
+
+```shell
+$ sudo perf script
+            perf 23321 [002] 1216304.406239: probe:do_sys_open: (ffffffff93276e90) filename_string="/proc/23324/status"
+              ls 23324 [001] 1216304.406588: probe:do_sys_open: (ffffffff93276e90) filename_string="/etc/ld.so.cache"
+              ls 23324 [001] 1216304.406603: probe:do_sys_open: (ffffffff93276e90) filename_string="/lib/x86_64-linux-gnu/libselinux.so.1"
+...
+              ls 23324 [001] 1216304.407014: probe:do_sys_open: (ffffffff93276e90) filename_string="/usr/lib/locale/zh.UTF-8/LC_CTYPE"
+              ls 23324 [001] 1216304.407017: probe:do_sys_open: (ffffffff93276e90) filename_string="/usr/lib/locale/zh.utf8/LC_CTYPE"
+              ls 23324 [001] 1216304.407021: probe:do_sys_open: (ffffffff93276e90) filename_string="/usr/lib/locale/zh/LC_CTYPE"
+              ls 23324 [001] 1216304.407034: probe:do_sys_open: (ffffffff93276e90) filename_string="."
+```
+
+- 删除探针
+
+```shell
+sudo perf probe --del probe:do_sys_open
+```
+
+### eBPF 和 BCC
+
+eBPF 就是 Linux 版的 DTrace，可以通过 C 语言自由扩展
+
+BCC（BPF Compiler Collection,把这些过程通过 Python 抽象起来,使用 BCC 进行动态追踪时，编写简单的脚本就可以了。
+
+- 安装 BCC
+
+```shell
+
+# Ubuntu
+sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 4052245BD4284CDD
+echo "deb https://repo.iovisor.org/apt/$(lsb_release -cs) $(lsb_release -cs) main" | sudo tee /etc/apt/sources.list.d/iovisor.list
+sudo apt-get update
+sudo apt-get install bcc-tools libbcc-examples linux-headers-$(uname -r)
+
+```
+
+- 使用 python 脚本监控`do_sys_open`
+
+```python
+from bcc import BPF
+# define BPF program (""" is used for multi-line string).
+# '#' indicates comments for python, while '//' indicates comments for C.
+prog = """
+#include <uapi/linux/ptrace.h>
+#include <uapi/linux/limits.h>
+#include <linux/sched.h>
+// define output data structure in C
+struct data_t {
+    u32 pid;
+    u64 ts;
+    char comm[TASK_COMM_LEN];
+    char fname[NAME_MAX];
+};
+BPF_PERF_OUTPUT(events);
+
+// define the handler for do_sys_open.
+// ctx is required, while other params depends on traced function.
+int hello(struct pt_regs *ctx, int dfd, const char __user *filename, int flags){
+    struct data_t data = {};
+    data.pid = bpf_get_current_pid_tgid();
+    data.ts = bpf_ktime_get_ns();
+    if (bpf_get_current_comm(&data.comm, sizeof(data.comm)) == 0) {
+        bpf_probe_read(&data.fname, sizeof(data.fname), (void *)filename);
+    }
+    events.perf_submit(ctx, &data, sizeof(data));
+    return 0;
+}
+"""
+# load BPF program
+b = BPF(text=prog)
+# attach the kprobe for do_sys_open, and set handler to hello
+b.attach_kprobe(event="do_sys_open", fn_name="hello")
+
+# process event
+start = 0
+def print_event(cpu, data, size):
+    global start
+    event = b["events"].event(data)
+    if start == 0:
+            start = event.ts
+    time_s = (float(event.ts - start)) / 1000000000
+    print("%-18.9f %-16s %-6d %-16s" % (time_s, event.comm, event.pid, event.fname))
+
+# loop with callback to print_event
+b["events"].open_perf_buffer(print_event)
+
+
+# print header
+print("%-18s %-16s %-6s %-16s" % ("TIME(s)", "COMM", "PID", "FILE"))
+# start the event polling loop
+while 1:
+    try:
+        b.perf_buffer_poll()
+    except KeyboardInterrupt:
+        exit()
+```
+
+- 开始监控
+
+```shell
+sudo python trace-open.py
+```
+
+### SystemTap 和 sysdig
+
+从稳定性上来说，SystemTap 只在 RHEL 系统中好用，在其他系统中则容易出现各种异常问题
+
+sysdig 则是随着容器技术的普及而诞生的，主要用于容器的动态追踪。sysdig 汇集了一些列性能工具的优势，可以说是集百家之所长。 sysdig 的特点： sysdig = strace + tcpdump + htop + iftop + lsof + docker inspect。
+
+## 几个常见的动态追踪使用场景
+
+![img](/../../../../../../../media/2020-07-11-linux-perf-optimization-learning-7th-week-summary/5a2b2550547d5eaee850bfb806f76625.png)
+
+
+
+eBPF编写可以参考[https://docs.cilium.io/en/stable/bpf/](https://docs.cilium.io/en/stable/bpf/)
+
+
 
