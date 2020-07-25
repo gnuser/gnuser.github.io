@@ -36,7 +36,7 @@ Dir[Rails.root.join('spec/support/**/*.rb')].each { |f| require f }
 
 ### 使用案例
 
-加入我们有一个`Article`的`model`：
+假如我们有一个`Article`的`model`：
 
 - 有一个字段`status`，类型为`Integer`，表示文章的状态，并且可以取的值为`unpublished`和`published`,
 - 还有个字段`published_at`,类型为`DateTime`，表示文章的发布时间
