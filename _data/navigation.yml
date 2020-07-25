@@ -1,5 +1,5 @@
 header:
-  - title: 性能优化
+  - title: Linux性能优化
     url: /lpo/index
   - titles:
       # @start locale config
@@ -51,6 +51,27 @@ header:
       # @end locale config
     url: /about.htm
 
+lpo-note:
+  - title: Linux性能优化学习笔记
+    children:
+      - title: 第1周总结-CPU
+        url: /lpo-note/1st-week
+      - title: 第2周总结-CPU
+        url: /lpo-note/2nd-week
+      - title: 第3周总结-内存
+        url: /lpo-note/3rd-week
+      - title: 第4周总结-IO
+        url: /lpo-note/4th-week
+      - title: 第5周总结-网络
+        url: /lpo-note/5th-week
+      - title: 第6周总结-网络
+        url: /lpo-note/6th-week
+      - title: 第7周总结-综合实战
+        url: /lpo-note/7th-week
+      - title: 第8周总结-综合实战
+        url: /lpo-note/8th-week
+      - title: 第9周总结-推荐书单
+        url: /lpo-note/9th-week
 lpo:
   - title: IO性能优化
     children:

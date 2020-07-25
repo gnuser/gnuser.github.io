@@ -1,8 +1,11 @@
 ---
 key: linux-perf-optimization-learning-8th-week-summary
-title: Linux perf optimization learning 8th week summary
+title: Linux性能学习第八周-综合实战
 date: 2020-07-18 22:26:51 +0800
 typora-root-url: /Users/chenjing/workspace/github/gnuser.github.io
+sidebar:
+  nav: lpo-note
+permalink: /lpo-note/8th-week
 ---
 
 linux 性能优化学习第八周总结，本周是综合实战以及总结

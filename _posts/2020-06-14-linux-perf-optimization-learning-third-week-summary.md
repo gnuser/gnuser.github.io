@@ -1,8 +1,11 @@
 ---
 key: linux-perf-optimization-learning-third-week-summary
-title: Linux perf optimization learning third week summary
+title: Linux性能学习第三周-内存性能优化
 date: 2020-06-14 20:22:07 +0800
 typora-root-url: /Users/chenjing/workspace/github/gnuser.github.io
+sidebar:
+  nav: lpo-note
+permalink: /lpo-note/3rd-week
 ---
 
 Linux 性能优化学习，第三周总结

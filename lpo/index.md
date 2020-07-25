@@ -4,7 +4,7 @@ permalink: /lpo/index
 key: lpo
 layout: article
 sidebar:
-  nav: lpo
+  nav: lpo-note
 aside:
   toc: true
 ---

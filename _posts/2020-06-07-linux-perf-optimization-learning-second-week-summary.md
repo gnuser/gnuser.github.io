@@ -1,8 +1,11 @@
 ---
 key: linux-perf-optimization-learning-second-week-summary
-title: Linux perf optimization learning second week summary
+title: Linux性能优化第二周-CPU性能优化
 date: 2020-06-07 10:44:21 +0800
 typora-root-url: /Users/chenjing/workspace/github/gnuser.github.io
+sidebar:
+  nav: lpo-note
+permalink: /lpo-note/2nd-week
 ---
 
 Linux 性能优化学习，第二周总结

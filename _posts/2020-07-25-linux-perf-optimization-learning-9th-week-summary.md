@@ -1,8 +1,11 @@
 ---
 key: linux-perf-optimization-learning-9th-week-summary
-title: Linux perf optimization learning 9th week summary
+title: Linux性能学习第九周-推荐书单
 date: 2020-07-25 11:36:03 +0800
 typora-root-url: /Users/chenjing/workspace/github/gnuser.github.io
+sidebar:
+  nav: lpo-note
+permalink: /lpo-note/9th-week
 ---
 
 linux 性能优化学习第九周总结，本周是推荐书单

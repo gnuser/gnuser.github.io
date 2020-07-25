@@ -1,8 +1,11 @@
 ---
 key: linux-perf-optimization-learning-4th-week-summary
-title: Linux perf optimization learning 4th week summary
+title: Linux性能学习第四周-IO性能优化
 date: 2020-06-20 13:23:36 +0800
 typora-root-url: /Users/chenjing/workspace/github/gnuser.github.io
+sidebar:
+  nav: lpo-note
+permalink: /lpo-note/4th-week
 ---
 
 linux 性能优化学习第四周总结，本周主要是 IO性能优化

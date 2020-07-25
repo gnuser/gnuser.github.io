@@ -1,8 +1,11 @@
 ---
 key: linux-perf-optimization-learning-5th-week-summary
-title: Linux perf optimization learning 5th week summary
+title: Linux性能学习第五周-网络性能优化
 date: 2020-06-28 19:21:26 +0800
 typora-root-url: /Users/chenjing/workspace/github/gnuser.github.io
+sidebar:
+  nav: lpo-note
+permalink: /lpo-note/5th-week
 ---
 
 linux 性能优化学习第五周总结，本周主要是 网络性能优化
