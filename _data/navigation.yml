@@ -1,6 +1,8 @@
 header:
   - title: Linux性能优化
     url: /lpo/index
+  - title: 精通以太坊
+    url: /books/mastering-ethereum/index
   - titles:
       # @start locale config
       en: &EN Archive
@@ -129,6 +131,14 @@ lpo:
         url: /lpo/network/nslookup
       - title: dig-递归查询DNS解析过程
         url: /lpo/network/dig
+me:
+  - title: 智能合约
+    children:
+      - title: 什么是以太坊
+        url: /books/masterring-ethereum/what-is-ethereum
+      - title: 智能合约的安全漏洞
+        url: /books/masterring-ethereum/smart-contract/security
+
 layouts:
   - title: Layouts
     children:
