@@ -99,17 +99,17 @@ aside:
  The result of this is:
  Cell No :   0   1   2   3   4   5   6   7
  Contents:   8   4   2   3   3   1   0   0
- Pointer :                       ^        
+ Pointer :                       ^
  9         <<<<-           Decrement the loop counter in Cell #1
  The result of this is:
  Cell No :   0   1   2   3   4   5   6   7
  Contents:   8   3   2   3   3   1   0   0
- Pointer :       ^                    
+ Pointer :       ^
 10     ]                   Loop till Cell #1 is zero
  The result of this is:
  Cell No :   0   1   2   3   4   5   6   7
  Contents:   8   0   8   12  12  4   0   0
- Pointer :       ^    
+ Pointer :       ^
 11     >+                  Add 1 to Cell #2
  The result of this is:
  Cell No :   0   1   2   3   4   5   6   7
@@ -119,7 +119,7 @@ aside:
  The result of this is:
  Cell No :   0   1   2   3   4   5   6   7
  Contents:   8   0   9   13  12  4   0   0
- Pointer :               ^   
+ Pointer :               ^
 13     >-                  Subtract 1 from Cell #4
  The result of this is:
  Cell No :   0   1   2   3   4   5   6   7
@@ -129,18 +129,18 @@ aside:
  The result of this is:
  Cell No :   0   1   2   3   4   5   6   7
  Contents:   8   0   9   13  11  4   1   0
- Pointer :                           ^   
-15     [<]                 Move back to the first zero cell you find; this will                    
+ Pointer :                           ^
+15     [<]                 Move back to the first zero cell you find; this will
 16                         be Cell #1 which was cleared by the previous loop
  The result of this is:
  Cell No :   0   1   2   3   4   5   6   7
  Contents:   8   0   9   13  11  4   1   0
- Pointer :       ^      
+ Pointer :       ^
 17     <-                  Decrement the loop Counter in Cell #0
  The result of this is:
  Cell No :   0   1   2   3   4   5   6   7
  Contents:   7   0   9   13  11  4   1   0
- Pointer :   ^       
+ Pointer :   ^
 18 ]                       Loop till Cell #0 is zero
 19
 20 The result of this is:
@@ -168,17 +168,14 @@ Hello World!
 
 ### 图灵完备的问题
 
-如果能执行任意复杂的程序，可能会造成死循环或消耗大量资源的程序以至于卡住整条链的打包出块，所以以太坊增加了gas limit的设定，并且每条指令都会消耗gas，直到消耗完设定的gas limit，而gas limit的最大值目前是～12,500,000, [https://ethstats.net/](https://ethstats.net/)
+如果能执行任意复杂的程序，可能会造成死循环或消耗大量资源的程序以至于卡住整条链的打包出块，所以以太坊增加了 gas limit 的设定，并且每条指令都会消耗 gas，直到消耗完设定的 gas limit，而 gas limit 的最大值目前是～ 12,500,000, [https://ethstats.net/](https://ethstats.net/)
 
 ![image-20201213004219104](../media/what-is-ethereum/image-20201213004219104.png)
 
-
-
 ## 激进的以太坊开发文化
 
-相比bitcoin社区的谨慎，以太坊更愿意打破旧有，快速更新，甚至牺牲兼容性。当然这样的后果是生态建设者不得不更新已有的应用，甚至需要重新部署已有的合约。
+相比 bitcoin 社区的谨慎，以太坊更愿意打破旧有，快速更新，甚至牺牲兼容性。当然这样的后果是生态建设者不得不更新已有的应用，甚至需要重新部署已有的合约。
 
 ## 为什么要学习以太坊
 
-区块链融合了编程，密码学，经济学，分布式系统，p2p网络等知识，而使用以太坊我们可以直接在上层进行应用开发，随着以太坊上的生态逐渐健全，可以组合出更多有趣的项目，比如目前火热的defi生态，则是整个平台的项目能够想lego积木一样堆叠出了一个庞大的生态体系。
-
+区块链融合了编程，密码学，经济学，分布式系统，p2p 网络等知识，而使用以太坊我们可以直接在上层进行应用开发，随着以太坊上的生态逐渐健全，可以组合出更多有趣的项目，比如目前火热的 defi 生态，则是整个平台的项目能够像 lego 积木一样堆叠出了一个庞大的生态体系。
