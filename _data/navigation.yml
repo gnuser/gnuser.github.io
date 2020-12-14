@@ -132,7 +132,7 @@ lpo:
       - title: dig-递归查询DNS解析过程
         url: /lpo/network/dig
 me:
-  - title: 智能合约
+  - title: 精通以太坊
     children:
       - title: 什么是以太坊
         url: /books/masterring-ethereum/what-is-ethereum
