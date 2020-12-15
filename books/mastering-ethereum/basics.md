@@ -35,7 +35,7 @@ aside:
 
 - 网页版钱包 Blockchain.com
 
-死要平台管理，支持btc，eth等
+私钥由平台管理，支持btc，eth等
 
 ## 钱包安全
 
@@ -55,7 +55,7 @@ aside:
 - rinkeby
 - goerli
 
-都是测试网络，eth可以用过faucet网络获取，但最容易获得的是ropsten [https://faucet.metamask.io/](https://faucet.metamask.io/)
+都是测试网络，eth可以通过faucet网络获取，但最容易获得的是ropsten [https://faucet.metamask.io/](https://faucet.metamask.io/)
 
 - 私有节点网络
 
@@ -63,9 +63,11 @@ aside:
 
 ## 账户模型
 
-以太坊包含两种账户，一种是存放eth的，我们称为EOA(externally owned accounts),另一种是存放token的，我们称为合约账户。
+以太坊包含两种账户，一种是存放eth的，我们称为EOA(externally owned accounts)，另一种是存放token的，我们称为合约账户。
 
-EOA有私钥，合约账户没有。EOA和合约账户都能接收eth和token
+EOA有私钥，合约账户没有
+
+EOA和合约账户都能接收eth和token
 
 ## 合约初试
 
