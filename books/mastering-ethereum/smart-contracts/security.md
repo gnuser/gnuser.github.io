@@ -1,6 +1,6 @@
 ---
 title: 智能合约的安全漏洞
-permalink: /books/masterring-ethereum/smart-contract/security
+permalink: /books/mastering-ethereum/smart-contract/security
 key: smart-contract/security
 layout: article
 sidebar:

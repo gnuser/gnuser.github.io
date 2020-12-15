@@ -135,9 +135,11 @@ me:
   - title: 精通以太坊
     children:
       - title: 什么是以太坊
-        url: /books/masterring-ethereum/what-is-ethereum
+        url: /books/mastering-ethereum/what-is-ethereum
+      - title: 以太坊基础
+        url: /books/mastering-ethereum/basics
       - title: 智能合约的安全漏洞
-        url: /books/masterring-ethereum/smart-contract/security
+        url: /books/mastering-ethereum/smart-contract/security
 
 layouts:
   - title: Layouts
