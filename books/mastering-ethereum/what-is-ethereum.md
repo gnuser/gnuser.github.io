@@ -1,7 +1,7 @@
 ---
 title: What is ethereum
-permalink: /books/masterring-ethereum/what-is-ethereum
-key: smart-contract/what-is-ethereum
+permalink: /books/mastering-ethereum/what-is-ethereum
+key: what-is-ethereum
 layout: article
 sidebar:
   nav: me
