@@ -24,7 +24,7 @@ aside:
 - [Mantis](https://github.com/input-output-hk/mantis), written in Scala
 - [Harmony](https://github.com/ether-camp/ethereum-harmony), written in Java
 
-## 不同的节点搭建方式
+## 全节点所需硬件配置
 
 一般情况下，如果我们自建节点，都是选择全节点模式，全节点包含所有的区块以及交易数据。
 
@@ -73,7 +73,7 @@ GOROOT=go
 
 ### 查看同步模式以及归档模式
 
-1. 同步模式
+#### 同步模式
 ```shell
 $ geth -h | grep sync
 --syncmode value                    Blockchain sync mode ("fast", "full", or "light") (default: fast)
@@ -96,7 +96,7 @@ $ geth -h | grep sync
 --syncmode fast --cache 2048
 ```
 
-2. 归档模式
+#### 归档模式
 ```shell
 $ geth -h | grep gcmode
 --gcmode value                      Blockchain garbage collection mode ("full", "archive") (default: "full")
