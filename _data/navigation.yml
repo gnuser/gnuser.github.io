@@ -138,6 +138,8 @@ me:
         url: /books/mastering-ethereum/what-is-ethereum
       - title: 以太坊基础
         url: /books/mastering-ethereum/basics
+      - title: 节点搭建
+        url: /books/mastering-ethereum/clients
       - title: 智能合约的安全漏洞
         url: /books/mastering-ethereum/smart-contract/security
 
