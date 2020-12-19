@@ -13,7 +13,7 @@ aside:
 
 ## 不同语言实现的客户端
 
-推荐使用geth或parity，parity性能会更好一些，而且rpc接口更好用，不过parity看起来不更新了。委托一点还是选择geth。
+推荐使用geth或parity，parity性能会更好一些，而且rpc接口更好用，不过parity看起来不更新了。稳妥一点还是选择geth。
 
 可以查看网站[https://ethstats.net/](https://ethstats.net/)，获取当前活跃的节点以及使用的客户端类型
 
@@ -49,14 +49,14 @@ aside:
 
 geth默认使用fast同步方式跳过验证所有的transaction，同步完数据后再进行验证，这样可以更快的同步好数据
 
-1. 安装geth
+### 安装geth
 ```shell
 git clone https://github.com/ethereum/go-ethereum.git
 cd go-ethereum
 make geth
 ```
 
-2. 查看版本
+### 查看版本
 ```shell
 ➜  go-ethereum git:(master) ./build/bin/geth version
 Geth
@@ -71,9 +71,9 @@ GOPATH=
 GOROOT=go
 ```
 
-3. 查看同步模式以及归档模式
+### 查看同步模式以及归档模式
 
-同步模式
+1. 同步模式
 ```shell
 $ geth -h | grep sync
 --syncmode value                    Blockchain sync mode ("fast", "full", or "light") (default: fast)
@@ -96,7 +96,7 @@ $ geth -h | grep sync
 --syncmode fast --cache 2048
 ```
 
-归档模式
+2. 归档模式
 ```shell
 $ geth -h | grep gcmode
 --gcmode value                      Blockchain garbage collection mode ("full", "archive") (default: "full")
@@ -117,7 +117,7 @@ $ geth -h | grep gcmode
 ![image-20201219181356557](../media/clients/image-20201219181356557.png)
 
 
-3. 指定目录存放区块数据
+### 指定目录存放区块数据
 
 默认区块数据会存放在`~/.ethereum`, 如果是挂载了云盘或其他独立硬盘分区，可以使用`--datadir`选项，比如我这里使用了`/mnt/ethereum`
 
@@ -130,7 +130,7 @@ $ geth --datadir /mnt/ethereum
 $ nohup geth --datadir /mnt/ethereum &
 ```
 
-4. 如何查看同步进度
+### 如何查看同步进度
 
 ```shell
 $ geth attach --datadir /mnt/ethereum/
