@@ -18,11 +18,18 @@ aside:
 可以查看网站[https://ethstats.net/](https://ethstats.net/)，获取当前活跃的节点以及使用的客户端类型
 
 - [Parity](https://github.com/openethereum/parity-ethereum), written in Rust
+
 - [Geth](https://github.com/ethereum/go-ethereum), written in Go
+
 - [cpp-ethereum](https://github.com/ConsenSysMesh/cpp-ethereum), written in C++
+
 - [pyethereum](https://github.com/ethereum/py-evm), written in Python
+
 - [Mantis](https://github.com/input-output-hk/mantis), written in Scala
+
 - [Harmony](https://github.com/ether-camp/ethereum-harmony), written in Java
+
+  
 
 ## 全节点所需硬件配置
 
@@ -167,3 +174,60 @@ type SyncProgress struct {
 	KnownStates   uint64 // Total number os state trie entries known about
 }
 ```
+
+## 一台主节点的服务器负载
+
+可以看到内存占满了，swp也快占满。很大原因是没有用ssd硬盘
+
+![image-20201222214916387](../media/clients/image-20201222214916387.png)
+
+可以通过以下命令查看硬盘类型
+
+```shell
+lsblk -d -o name,rota
+NAME  ROTA
+loop0    1
+loop2    1
+sda      0
+sdb      1
+```
+
+`ROTA` means `rotational device`, `0`是ssd，`1`是hdd
+
+## 各种节点网络
+
+除了mainnet，其他都是testnet
+
+- [Görli](https://goerli.etherscan.io/): 和mainnet一样的数据，但你拥有的还是测试币, [faucet](https://goerli-faucet.slock.it/)
+
+- [Rinkeby](https://rinkeby.etherscan.io/): [faucet](https://www.rinkeby.io/#stats)
+- [Ropsten](https://ropsten.etherscan.io/): [faucet](https://faucet.metamask.io/)
+- [Kovan](https://kovan.etherscan.io/)：[faucet](https://gitter.im/kovan-testnet/faucet#), 出块速度很快(~5s)
+
+## 私有节点搭建
+
+[https://github.com/rubenafo/eth-playground#install](https://github.com/rubenafo/eth-playground#install)
+
+```shell
+git clone https://github.com/Capgemini-AIE/ethereum-docker.git
+cd ethereum-docker
+docker-compose up -d
+open http://localhost:3000
+```
+
+![image-20201223001250561](../media/clients/image-20201223001250561.png)
+
+### 测试挖矿
+
+```shell
+sudo docker exec -it 7a66de5a4072  geth --datadir=~/.ethereum/devchain attach
+miner.start(1) # 1 是启动的线程数
+eth.blockNumber # 查看区块高度
+eth.getBlock(1) # 查看区块数据
+```
+
+
+
+## RPC调用
+
+以前使用geth搭建节点，有个问题是当你想连续发送transaction时，nonce值获取不准确。后面换了parity就解决了。
