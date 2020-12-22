@@ -206,8 +206,6 @@ sdb      1
 
 ## 私有节点搭建
 
-[https://github.com/rubenafo/eth-playground#install](https://github.com/rubenafo/eth-playground#install)
-
 ```shell
 git clone https://github.com/Capgemini-AIE/ethereum-docker.git
 cd ethereum-docker
