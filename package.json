@@ -57,5 +57,9 @@
     "hooks": {
       "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
     }
+  },
+  "dependencies": {
+    "eth-crypto": "^1.8.0",
+    "keccak256": "^1.0.2"
   }
 }
