@@ -142,6 +142,8 @@ me:
         url: /books/mastering-ethereum/clients
       - title: 密钥及地址
         url: /books/mastering-ethereum/keys-addresses
+      - title: 钱包
+        url: /books/mastering-ethereum/wallets
       - title: 智能合约的安全漏洞
         url: /books/mastering-ethereum/smart-contract/security
 
