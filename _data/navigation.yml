@@ -146,6 +146,8 @@ me:
         url: /books/mastering-ethereum/wallets
       - title: 交易
         url: /books/mastering-ethereum/transactions
+      - title: 合约开发
+        url: /books/mastering-ethereum/solidity
       - title: 智能合约的安全漏洞
         url: /books/mastering-ethereum/smart-contract/security
 
