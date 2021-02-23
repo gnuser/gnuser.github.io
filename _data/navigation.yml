@@ -150,6 +150,8 @@ me:
         url: /books/mastering-ethereum/solidity
       - title: 智能合约的安全漏洞
         url: /books/mastering-ethereum/smart-contract/security
+      - title: Tokens
+        url: /books/mastering-ethereum/smart-contract/tokens
 
 layouts:
   - title: Layouts
