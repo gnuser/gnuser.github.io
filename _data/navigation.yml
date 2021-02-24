@@ -151,7 +151,7 @@ me:
       - title: 智能合约的安全漏洞
         url: /books/mastering-ethereum/smart-contract/security
       - title: Tokens
-        url: /books/mastering-ethereum/smart-contract/tokens
+        url: /books/mastering-ethereum/tokens
 
 layouts:
   - title: Layouts
