@@ -154,8 +154,8 @@ me:
         url: /books/mastering-ethereum/tokens
       - title: Oracles
         url: /books/mastering-ethereum/oracles
-      - title: Dapp
-        url: /books/mastering-ethereum/dapp
+      - title: Dapps
+        url: /books/mastering-ethereum/dapps
 
 layouts:
   - title: Layouts

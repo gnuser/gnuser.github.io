@@ -40,7 +40,7 @@ https://github.com/ethereumbook/ethereumbook/blob/develop/code/auction_dapp/back
 
 #### DeepRepository
 
-ERC721兼容的token
+ERC721 兼容的 token
 
 #### AuctionRepository
 
@@ -55,4 +55,3 @@ $ truffle compile
 $ npm install @truffle/hdwallet-provider
 $ truffle migrate --network ropsten
 ```
-
