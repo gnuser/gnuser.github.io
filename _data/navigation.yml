@@ -152,6 +152,10 @@ me:
         url: /books/mastering-ethereum/smart-contract/security
       - title: Tokens
         url: /books/mastering-ethereum/tokens
+      - title: Oracles
+        url: /books/mastering-ethereum/oracles
+      - title: Dapp
+        url: /books/mastering-ethereum/dapp
 
 layouts:
   - title: Layouts

@@ -182,6 +182,26 @@ extcodesize可以获取地址的代码行数：https://ethereum.stackexchange.co
 
 https://etherscan.io/tokens-nft
 
+## Openzepplin
+
+```
+npm init -y
+truffle init
+npm install --save-dev hardhat
+npx hardhat
+ Create an empty hardhat.config.js
+npm install --save-dev @openzeppelin/contracts
+npx hardhat node
+npm install --save-dev @nomiclabs/hardhat-ethers ethers
+npx hardhat console --network localhost
+npm install --save-dev chai
+npx hardhat test
+npm install --save-dev @openzeppelin/test-helpers
+npm install --save-dev @openzeppelin/test-environment
+```
+
+
+
 ## Resources
 
 https://hardhat.org/
@@ -191,6 +211,8 @@ https://www.trufflesuite.com/docs
 https://github.com/OpenZeppelin/openzeppelin-contracts
 
 https://docs.openzeppelin.com/learn/setting-up-a-node-project
+
+https://docs.openzeppelin.com/contracts/3.x/
 
 https://etherscan.io/token/0x06012c8cf97bead5deae237070f9587f8e7a266d
 
