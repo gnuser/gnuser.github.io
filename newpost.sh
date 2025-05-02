@@ -7,7 +7,7 @@
 #        ./newpost.sh "My Blog Post Title"
 #
 
-typorarooturl="/Users/chenjing/workspace/github/gnuser.github.io"
+typorarooturl="~/Work/blog/gnuser.github.io"
 
 title=$1
 
